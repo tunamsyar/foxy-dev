@@ -1,0 +1,83 @@
+Attribute:
+  enabled: false
+
+BooleanParameter:
+  enabled: true
+
+ClassVariable:
+  enabled: false
+
+ControlParameter:
+  enabled: true
+
+DataClump:
+  enabled: true
+
+  max_copies: 2
+  min_clump_size: 2
+FeatureEnvy:
+  enabled: true
+
+IrresponsibleModule:
+  enabled: false
+
+LongParameterList:
+  enabled: true
+  max_params: 3
+  overrides:
+    initialize:
+      max_params: 5
+LongYieldList:
+  enabled: true
+  max_params: 3
+NestedIterators:
+  enabled: true
+  max_allowed_nesting: 2
+  ignore_iterators: []
+NilCheck:
+  enabled: false
+
+RepeatedConditional:
+  enabled: true
+  max_ifs: 2
+TooManyInstanceVariables:
+  enabled: true
+  max_instance_variables: 9
+
+UncommunicativeMethodName:
+  enabled: true
+  exclude: [
+    'Users::OmniauthCallbacksController#google_oauth2'
+  ]
+
+  reject:
+  - !ruby/regexp /^[a-z]$/
+  - !ruby/regexp /[0-9]$/
+  - !ruby/regexp /[A-Z]/
+  accept:
+UncommunicativeModuleName:
+  enabled: true
+  reject:
+  - !ruby/regexp /^.$/
+  - !ruby/regexp /[0-9]$/
+  accept:
+  - Inline::C
+  - V2
+UncommunicativeParameterName:
+  enabled: true
+  reject:
+  - !ruby/regexp /^.$/
+  - !ruby/regexp /[0-9]$/
+  - !ruby/regexp /[A-Z]/
+  accept: []
+UncommunicativeVariableName:
+  enabled: true
+  reject:
+  - !ruby/regexp /^.$/
+  - !ruby/regexp /[0-9]$/
+  - !ruby/regexp /[A-Z]/
+  accept:
+  - _
+
+UnusedParameters:
+  enabled: true
