@@ -4,6 +4,7 @@ ruby '2.3.3'
 
 gem 'rails', '~> 5.0.0'
 gem 'sass-rails'
+gem 'bootstrap'
 gem 'uglifier'
 gem 'jquery-rails'
 gem 'turbolinks'
@@ -30,7 +31,6 @@ group :development, :test do
   gem 'capybara-webkit'
   gem 'listen'
   gem 'bullet'
-  gem "zero_downtime_migrations"
 end
 
 group :test do
