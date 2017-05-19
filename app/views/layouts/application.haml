@@ -15,4 +15,10 @@
         - if alert
           .flash-item.alert.alert-danger
             = alert_with_html
+    =render 'layouts/menu'
+    .container
+      - flash.each do |key, value|
+        %div{:class => "alert alert-#{key}"}
+          = value
+
     = yield
