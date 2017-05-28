@@ -1,0 +1,9 @@
+%h2 Transaction Info
+
+-if current_user.transactions.blank?
+  %h2 empty
+-else
+  -current_user.transactions.each do |transaction|
+    =transaction.phone_number
+    =transaction.amount
+    =transaction.commission

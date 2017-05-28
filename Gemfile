@@ -42,5 +42,6 @@ gem 'haml-rails'
 gem 'pg'
 gem 'envied'
 gem 'puma'
+gem 'simple_form'
 
 gem 'devise'
