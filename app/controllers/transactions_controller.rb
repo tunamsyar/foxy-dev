@@ -1,4 +1,5 @@
 class TransactionsController < ApplicationController
+  before_action :assign_operators
 
   def index; end
 
@@ -16,6 +17,10 @@ class TransactionsController < ApplicationController
   end
 
   private
+
+  def assign_operators
+    @operators = Operator.all
+  end
 
   def tran_params
     params.require(:transaction).permit(:phone_number, :amount, :commission)
