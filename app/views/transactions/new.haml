@@ -4,3 +4,7 @@
   = f.input :amount
   = f.input :commission
   = f.submit
+
+- @operators.each do |operator|
+  = operator.operator_name
+  = operator.amount
