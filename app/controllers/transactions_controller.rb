@@ -4,6 +4,7 @@ class TransactionsController < ApplicationController
   def index; end
 
   def new
+    binding.pry
     @trx = Transaction.new
   end
 
