@@ -1,0 +1,6 @@
+%h2 Transaction
+= simple_form_for @trx, url: transactions_path do |f|
+  = f.input :phone_number
+  = f.input :amount
+  = f.input :commission
+  = f.submit
