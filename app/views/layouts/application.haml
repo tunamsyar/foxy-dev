@@ -1,5 +1,5 @@
 !!!
-%html
+%html{style: 'height: 100%;'}
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title foxy
@@ -7,10 +7,11 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    =render 'layouts/menu'
-    .container
-      - flash.each do |key, value|
-        %div{:class => "alert alert-#{key}"}
-          = value
-
-    = yield
+    #main
+      = render 'layouts/flashes'
+      .container.mx-0{ style: "height: 100%;"}
+        .row
+          .col-1.bg-red
+            = render 'layouts/menu'
+          .col-11
+            = yield
