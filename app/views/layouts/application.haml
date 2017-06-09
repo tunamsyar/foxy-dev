@@ -13,5 +13,6 @@
         .row
           .col-1.bg-red
             = render 'layouts/menu'
+            %span{:onclick => "openNav()"} open
           .col-11
             = yield

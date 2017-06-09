@@ -1,0 +1,2 @@
+class OperatorRate < ApplicationRecord
+end
