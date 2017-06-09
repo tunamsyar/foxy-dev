@@ -1,10 +1,19 @@
-%h2 Transaction
-= simple_form_for @trx, url: transactions_path do |f|
-  = f.input :phone_number
-  = f.input :amount
-  = f.input :commission
-  = f.submit
+%h2 Top Up
+.card
+  - @operators.each do |operator|
+    = operator.operator_name
 
-- @operators.each do |operator|
-  = operator.operator_name
-  = operator.amount
+= simple_form_for @trx, url: transactions_path do |f|
+  .row.mt-5
+    .col-12
+      .card
+        .row
+          .col-2
+          .col-8
+            = f.input :amount
+      .card.mt-5
+        .row
+          .col-2
+          .col-8
+            = f.input :phone_number
+      = f.submit
