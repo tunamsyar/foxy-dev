@@ -7,14 +7,26 @@ class TransactionsController < ApplicationController
     @trx = Transaction.new
   end
 
+  def local_top_up
+    @trx = Transaction.new
+  end
+
+  def international_top_up
+    @trx = Transaction.new
+  end
+
   def create
     @trx = current_user.transactions.build(tran_params)
     if @trx.save
       redirect_to root_path
     else
-      redirect_to root_path
+      render :new
     end
   end
+
+  def edit; end
+
+  def update; end
 
   private
 
