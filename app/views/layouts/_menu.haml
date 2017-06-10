@@ -10,11 +10,11 @@
     %li
       %li= link_to 'International Top Up', new_transaction_path, class: 'text-white'
     %li
-      %a{:href => "#"} PIN
+      %li= link_to 'PIN', new_pin_path, class: 'text-white'
     %li
       %a{:href => "#"} Bill Payment
     %li
-      %a{:href => "#"} Transactions History
+      %li= link_to 'Transactions History', transactions_path, class: 'text-white'
     %li
       %a{:href => "#"} E-Wallet
     %li
