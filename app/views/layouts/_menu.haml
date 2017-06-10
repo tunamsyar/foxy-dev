@@ -6,9 +6,9 @@
     %li.active
       %a{:href => "#"} Dashboard
     %li
-      = link_to 'Local Top Up', new_transaction_path, class: 'text-white'
+      = link_to 'Local Top Up', local_top_up_transactions_path, class: 'text-white'
     %li
-      %li= link_to 'International Top Up', new_transaction_path, class: 'text-white'
+      %li= link_to 'International Top Up', international_top_up_transactions_path, class: 'text-white'
     %li
       %li= link_to 'PIN', new_pin_path, class: 'text-white'
     %li

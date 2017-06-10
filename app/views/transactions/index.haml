@@ -16,7 +16,8 @@
           %td
             = transaction.created_at
           %td
-            = Operator.find(transaction.operator_id).operator_name
+            = @operators.find(transaction.operator_id).operator_name
+
           %td
             = transaction.amount
           %td

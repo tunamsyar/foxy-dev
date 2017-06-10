@@ -3,9 +3,7 @@ class WalletsController < ApplicationController
     @wallet = Wallet.new
   end
 
-  def create
-    binding.pry
-  end
+  def create; end
 
   private
 

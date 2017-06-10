@@ -1,11 +1,8 @@
 class TransactionsController < ApplicationController
   before_action :assign_operators
+  before_action :assign_operator_rates
 
   def index; end
-
-  def new
-    @trx = Transaction.new
-  end
 
   def local_top_up
     @trx = Transaction.new
@@ -30,11 +27,16 @@ class TransactionsController < ApplicationController
 
   private
 
+  def assign_operator_rates
+    @operator_rates = OperatorRate.all
+  end
+
   def assign_operators
     @operators = Operator.all
   end
 
   def tran_params
-    params.require(:transaction).permit(:phone_number, :amount, :commission)
+    params.require(:transaction)
+          .permit(:phone_number, :amount, :commission, :operator_id)
   end
 end
