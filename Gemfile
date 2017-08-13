@@ -8,6 +8,7 @@ gem 'bootstrap'
 gem 'uglifier'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'font-awesome-sass'
 
 group :development do
   gem 'spring'
