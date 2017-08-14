@@ -7,11 +7,12 @@
     = link_to 'International Top Up', international_top_up_transactions_path, class: 'text-white d-block mt-3'
     = link_to 'PIN', new_pin_path, class: 'text-white d-block mt-4'
     = link_to 'Bill Payment', bill_payment_transactions_path, class: 'text-white  d-block mt-3'
-    = link_to 'Transactions History', history_transactions_path, class: 'text-white d-block mt-3'
-    = link_to 'E-Wallet', e_wallet_wallets_path, class: 'text-white d-block mt-3'
+    = link_to 'Transactions History', transactions_path, class: 'text-white d-block mt-3'
+    = link_to 'E-Wallet',wallets_path, class: 'text-white d-block mt-3'
     = link_to 'My Account', account_transactions_path, class: 'text-white d-block mt-3'
     = link_to 'Agent Registration', agent_registration_transactions_path, class: 'text-white d-block mt-3'
     = link_to 'Help', help_transactions_path, class: 'text-white d-block mt-3'
+    = link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'text-white d-block mt-3'
 
 :javascript
   function openNav() {

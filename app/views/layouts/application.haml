@@ -27,9 +27,9 @@
               = icon('th', class: 'd-block mt-3 text-white fa-2x')
             = link_to bill_payment_transactions_path, class: 'text-deco-0' do
               = icon('file-text-o', class: 'd-block mt-3 text-white fa-2x')
-            = link_to history_transactions_path, class: 'text-deco-0' do
+            = link_to transactions_path, class: 'text-deco-0' do
               = icon('history', class: 'd-block mt-3 text-white fa-2x')
-            = link_to e_wallet_wallets_path, class: 'text-deco-0' do
+            = link_to wallets_path, class: 'text-deco-0' do
               = icon('money', class: 'd-block mt-3 text-white fa-2x')
             = link_to account_transactions_path, class: 'text-deco-0' do
               = icon('user', class: 'd-block mt-3 text-white fa-2x')
@@ -45,5 +45,8 @@
                     .h1.text-red.font-weight-200= content_for :page_title
                   .col.text-right
                     = icon('usd', class: 'text-red fa-2x')
-                    .btn.bg-red.text-white.rounded-0 RM 110.00
+                    .btn.bg-red
+                      .text-white.rounded-0
+                        = current_user.wallet.balance if current_user.present?
+
                 = yield
