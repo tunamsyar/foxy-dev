@@ -1,18 +1,49 @@
 !!!
-%html{style: 'height: 100%;'}
+%html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
+    %meta(name="mobile-web-app-capable" content="yes")
+    %meta(name="apple-mobile-web-app-capable" content="yes")
     %title foxy
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-  %body
+  %body.bg-grey
     #main
       = render 'layouts/flashes'
-      .container.mx-0{ style: "height: 100%;"}
-        .row
-          .col-1.bg-red
+      .container-fluid
+        .row.full-height
+          .col-1.bg-red.text-center.py-5
             = render 'layouts/menu'
-            %span{:onclick => "openNav()"} open
+            %span{onclick: "openNav()"}= icon('bars', class: 'text-white fa-2x mb-1')
+            = link_to root_path, class: 'text-deco-0' do
+              = icon('tachometer', class: 'd-block mt-3 text-white fa-2x')
+            = link_to local_top_up_transactions_path, class: 'text-deco-0' do
+              = icon('caret-square-o-up', class: 'd-block mt-3 text-white fa-2x')
+            = link_to international_top_up_transactions_path, class: 'text-deco-0' do
+              = icon('external-link', class: 'd-block mt-3 text-white fa-2x')
+            = link_to new_pin_path, class: 'text-deco-0' do
+              = icon('th', class: 'd-block mt-3 text-white fa-2x')
+            = link_to bill_payment_transactions_path, class: 'text-deco-0' do
+              = icon('file-text-o', class: 'd-block mt-3 text-white fa-2x')
+            = link_to history_transactions_path, class: 'text-deco-0' do
+              = icon('history', class: 'd-block mt-3 text-white fa-2x')
+            = link_to e_wallet_wallets_path, class: 'text-deco-0' do
+              = icon('money', class: 'd-block mt-3 text-white fa-2x')
+            = link_to account_transactions_path, class: 'text-deco-0' do
+              = icon('user', class: 'd-block mt-3 text-white fa-2x')
+            = link_to agent_registration_transactions_path, class: 'text-deco-0' do
+              = icon('id-card-o', class: 'd-block mt-3 text-white fa-2x')
+            = link_to help_transactions_path, class: 'text-deco-0' do
+              = icon('question', class: 'd-block mt-3 text-white fa-2x')
           .col-11
-            = yield
+            .row.m-5
+              .col
+                .row.mb-3
+                  .col.text-left
+                    .h1.text-red.font-weight-200= content_for :page_title
+                  .col.text-right
+                    = icon('usd', class: 'text-red fa-2x')
+                    .btn.bg-red.text-white.rounded-0 RM 110.00
+                = yield

@@ -1,3 +1,15 @@
 .bg-red {
-  background-color: #D80000;
+  background-color: $red;
+}
+
+.bg-grey {
+  background-color: $grey;
+}
+
+.bg-green {
+  background-color: $green;
+}
+
+.bg-purple {
+  background-color: $purple;
 }

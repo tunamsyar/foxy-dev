@@ -1,33 +1,22 @@
-#mySidenav.sidenav.bg-red
+#mySidenav.sidenav.bg-red.py-5
   %h3
-    = link_to 'FoxPay', root_path, class: 'text-white'
-    %a.closebtn{:href => "javascript:void(0)", :onclick => "closeNav()"} ×
-  %ul.list-unstyled.components
-    %li.active
-      %a{:href => "#"} Dashboard
-    %li
-      = link_to 'Local Top Up', local_top_up_transactions_path, class: 'text-white'
-    %li
-      %li= link_to 'International Top Up', international_top_up_transactions_path, class: 'text-white'
-    %li
-      %li= link_to 'PIN', new_pin_path, class: 'text-white'
-    %li
-      %a{:href => "#"} Bill Payment
-    %li
-      %li= link_to 'Transactions History', transactions_path, class: 'text-white'
-    %li
-      %a{:href => "#"} E-Wallet
-    %li
-      %li= link_to 'My Account', edit_user_registration_path, class: 'text-white'
-    %li
-      %a{:href => "#"} Agent Registration
-    %li
-      %a{:href => "#"} Help
+    = link_to 'FoxPay', root_path, class: 'text-white d-inline-block'
+    %a.d-inline-block{:href => "javascript:void(0)", :onclick => "closeNav()"}= icon('bars', class: 'text-white mb-1')
+    = link_to 'Dashboard', root_path, class: 'text-white d-block mt-4'
+    = link_to 'Local Top Up', local_top_up_transactions_path, class: 'text-white d-block mt-3'
+    = link_to 'International Top Up', international_top_up_transactions_path, class: 'text-white d-block mt-3'
+    = link_to 'PIN', new_pin_path, class: 'text-white d-block mt-4'
+    = link_to 'Bill Payment', bill_payment_transactions_path, class: 'text-white  d-block mt-3'
+    = link_to 'Transactions History', history_transactions_path, class: 'text-white d-block mt-3'
+    = link_to 'E-Wallet', e_wallet_wallets_path, class: 'text-white d-block mt-3'
+    = link_to 'My Account', account_transactions_path, class: 'text-white d-block mt-3'
+    = link_to 'Agent Registration', agent_registration_transactions_path, class: 'text-white d-block mt-3'
+    = link_to 'Help', help_transactions_path, class: 'text-white d-block mt-3'
 
 :javascript
   function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
+    document.getElementById("mySidenav").style.width = "300px";
+    document.getElementById("main").style.marginLeft = "300px";
   }
 
   function closeNav() {

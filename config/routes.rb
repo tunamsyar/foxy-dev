@@ -8,8 +8,21 @@ Rails.application.routes.draw do
     collection do
       get :local_top_up
       get :international_top_up
+      get :history
+      get :bill_payment
+      get :account
+      get :agent_registration
+      get :help
     end
   end
-  resources :wallets
-  resources :pins
+  resources :wallets do
+    collection do
+      get :e_wallet
+    end
+  end
+  resources :pins do
+    collection do
+      get :new
+    end
+  end
 end
