@@ -1,0 +1,32 @@
+%h2 Reload
+
+= simple_form_for @reload, url: reloads_path do |f|
+  .row.mt-5
+    .col-12
+      .card
+        .row
+          .col-2
+          .col-8
+            = f.label :source
+            = f.collection_radio_buttons :source,[['CIMB','CIMB'],['Bank Islam','Bank Islam']], :first, :last
+        .row
+          .col-2
+          .col-8
+            = f.label :transaction_type
+            = f.collection_radio_buttons :transaction_type,[[:cash_deposit,'Cash Deposit'],[:online_transaction,'Online Transaction']], :first, :last
+      .card.mt-5
+        .row
+          .col-2
+          .col-8
+            = f.input :amount
+            = f.input :reference_no
+      .card.mt-5 
+        .row
+          .col-2
+          .col-8
+            = f.label :image
+        .row
+          .col-2
+          .col-8
+            = f.file_field :image
+      = f.submit

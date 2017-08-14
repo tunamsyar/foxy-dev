@@ -1,6 +1,6 @@
 class TransactionsController < ApplicationController
+  before_action :active_users_only
   before_action :assign_operators
-  before_action :assign_operator_rates
 
   def index; end
 
@@ -15,6 +15,7 @@ class TransactionsController < ApplicationController
   def create
     @trx = current_user.transactions.build(tran_params)
     if @trx.save
+      TransactionServices.new(@trx).deduct_wallet
       redirect_to root_path
     else
       render :new
@@ -27,16 +28,12 @@ class TransactionsController < ApplicationController
 
   private
 
-  def assign_operator_rates
-    @operator_rates = OperatorRate.all
+  def tran_params
+    params.require(:transaction)
+          .permit(:phone_number, :amount, :commission, :operator_id)
   end
 
   def assign_operators
     @operators = Operator.all
-  end
-
-  def tran_params
-    params.require(:transaction)
-          .permit(:phone_number, :amount, :commission, :operator_id)
   end
 end

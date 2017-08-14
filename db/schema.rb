@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170610065005) do
+ActiveRecord::Schema.define(version: 20170810133255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,15 +23,10 @@ ActiveRecord::Schema.define(version: 20170610065005) do
 
   create_table "operator_pins", force: :cascade do |t|
     t.string  "pins"
-    t.integer "status"
+    t.integer "status",      default: 0
     t.integer "operator_id"
-  end
-
-  create_table "operator_rates", force: :cascade do |t|
-    t.integer  "operator_id"
-    t.decimal  "amount"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer "amount"
+    t.integer "user_id"
   end
 
   create_table "operator_stores", force: :cascade do |t|
@@ -53,23 +48,24 @@ ActiveRecord::Schema.define(version: 20170610065005) do
     t.string   "source"
     t.string   "amount"
     t.string   "reference_no"
-    t.integer  "status"
+    t.integer  "status",           default: 0
     t.string   "message"
     t.string   "image"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.integer  "transaction_type"
   end
 
   create_table "transactions", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "status"
+    t.integer  "status",                                default: 0
     t.string   "phone_number"
     t.integer  "operator_id"
-    t.datetime "created_at",                            null: false
+    t.datetime "created_at",                                        null: false
     t.string   "status_reply"
     t.decimal  "amount",       precision: 10, scale: 2
     t.decimal  "commission",   precision: 10, scale: 2
-    t.datetime "updated_at",                            null: false
+    t.datetime "updated_at",                                        null: false
   end
 
   create_table "user_pins", force: :cascade do |t|

@@ -9,6 +9,8 @@ gem 'uglifier'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'font-awesome-sass'
+gem 'carrierwave'
+gem 'mini_magick'
 
 group :development do
   gem 'spring'
@@ -46,3 +48,4 @@ gem 'puma'
 gem 'simple_form'
 
 gem 'devise'
+gem 'pundit'

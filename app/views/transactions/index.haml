@@ -1,16 +1,15 @@
-%h2 Transaction History
-.card
-  %table.table
-    %thead
-      %tr
-        %th Datetime
-        %th Operator
-        %th Amount
-        %th Phone Number
-        %th Status
-        %th Status Reply
-        %th Commission
-    %tbody
+- provide :page_title, 'Transaction History'
+.row
+  .col-12
+    %table.table.table-responsive.card
+      %tr.card-block
+        %td Date-Time
+        %td Operator
+        %td Amount
+        %td Phone Number/PIN
+        %td Status
+        %td Status Reply
+        %td Commission
       -current_user.transactions.each do |transaction|
         %tr
           %td

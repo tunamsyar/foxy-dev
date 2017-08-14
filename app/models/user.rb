@@ -4,5 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :transactions
-  has_many :wallets
+  has_many :reloads
+  has_many :operator_pins
+  has_one :wallet
+
 end

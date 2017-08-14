@@ -1,14 +1,3 @@
-- if flash.any?
-  - flash_messages.each do |key, value|
-    %div{:class => "alert alert-#{key} alert-dismissible", :role => "alert", :id => "alert"}
-      %button.close{"aria-label" => "Close", "data-dismiss" => "alert", :type => "button"}
-        %span{"aria-hidden" => "true"} &times;
-      %img{:src => image_path("alert-#{key}.png"), :style => 'height: 20px; padding-right: 10px;'}
-        = "  #{value}"
-
-- unless Rails.env.test?
-  = content_for :js do
-    :javascript
-      $("#alert").fadeTo(5000, 500).slideUp(500, function(){
-          $("#alert").alert('close');
-      });
+.container
+  - flash.each do |key, value|
+    %div{:class => "alert alert-#{key}"}= value
