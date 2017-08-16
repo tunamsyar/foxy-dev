@@ -11,6 +11,7 @@ gem 'turbolinks'
 gem 'font-awesome-sass'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'httparty'
 
 group :development do
   gem 'spring'

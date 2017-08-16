@@ -6,8 +6,7 @@ Rails.application.routes.draw do
 
   resources :transactions do
     collection do
-      get :local_top_up
-      get :international_top_up
+      get :new
       get :index
       get :bill_payment
       get :account
@@ -24,4 +23,5 @@ Rails.application.routes.draw do
   # resources :wallets
   # resources :pins
   resources :reloads
+  resources :international_top_ups
 end
