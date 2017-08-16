@@ -4,11 +4,7 @@ class TransactionsController < ApplicationController
 
   def index; end
 
-  def local_top_up
-    @trx = Transaction.new
-  end
-
-  def international_top_up
+  def new
     @trx = Transaction.new
   end
 
@@ -21,10 +17,6 @@ class TransactionsController < ApplicationController
       render :new
     end
   end
-
-  def edit; end
-
-  def update; end
 
   private
 

@@ -3,8 +3,8 @@
     = link_to 'FoxPay', root_path, class: 'text-white d-inline-block'
     %a.d-inline-block{:href => "javascript:void(0)", :onclick => "closeNav()"}= icon('bars', class: 'text-white mb-1')
     = link_to 'Dashboard', root_path, class: 'text-white d-block mt-4'
-    = link_to 'Local Top Up', local_top_up_transactions_path, class: 'text-white d-block mt-3'
-    = link_to 'International Top Up', international_top_up_transactions_path, class: 'text-white d-block mt-3'
+    = link_to 'Local Top Up', new_transaction_path, class: 'text-white d-block mt-3'
+    = link_to 'International Top Up', new_international_top_up_path, class: 'text-white d-block mt-3'
     = link_to 'PIN', new_pin_path, class: 'text-white d-block mt-4'
     = link_to 'Bill Payment', bill_payment_transactions_path, class: 'text-white  d-block mt-3'
     = link_to 'Transactions History', transactions_path, class: 'text-white d-block mt-3'
