@@ -1,19 +1,19 @@
 - provide :page_title, 'E-Wallet Reload Method'
 .row
-  .col-4
+  .col-12.col-md-4
     .card
       .card-block
         .card-title JomPay
-  .col-4
-    .card
+  .col-12.col-md-4
+    .card.my-sm-0.mt-3
       .card-block
         .card-title Bank Islam
-  .col-4
-    .card
+  .col-12.col-md-4
+    .card.my-sm-0.mt-3
       .card-block
         .card-title CIMB Bank
 .row.mt-5
-  .col.text-left
+  .col-12.col-sm-8.text-left
     .h1.text-red.font-weight-200 E-Wallet History
   .col.text-right
     = icon('filter', class: 'text-red fa-2x')
@@ -43,6 +43,6 @@
           %td
             = reload.transaction_type.humanize
 %h2 Wallet
-.card
+.card.my-sm-0.mb-3
   Balance:
   = @wallet.balance

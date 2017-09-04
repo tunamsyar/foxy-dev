@@ -1,3 +1,9 @@
 .text-white {
   color: #FFFFFF;
 }
+
+@include media-breakpoint-down(xs) {
+  .fa-2x {
+    font-size: inherit;
+  }
+}

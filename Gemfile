@@ -4,6 +4,8 @@ ruby '2.3.3'
 
 gem 'rails', '~> 5.0.0'
 gem 'sass-rails'
+gem 'popper_js', '~> 1.12.3'
+gem 'rails-assets-tether', '>= 1.1.0'
 gem 'bootstrap'
 gem 'uglifier'
 gem 'jquery-rails'

@@ -1,3 +1,17 @@
 .full-height {
-  height: 100vh;
+  min-height: 100vh;
+}
+
+.h-2-2 {
+  height: 2.2rem;
+}
+
+@include media-breakpoint-down(xs) {
+  .pr-xs-25 {
+    padding-right: 26.5px;
+  }
+
+  .mw-xs-87 {
+    max-width: 87%;
+  }
 }
