@@ -20,14 +20,35 @@
       .card
         .card-block
           .card-title Amount
-          .card-text
-            = f.input :amount
-            %input{type: 'radio', name: 'test'} 5
-            %input{type: 'radio', name: 'test'} 10
-            %input{type: 'radio', name: 'test'} 15
-            %input{type: 'radio', name: 'test'} 20
-            %input{type: 'radio', name: 'test'} 30
-            %input{type: 'radio', name: 'test'} 50
+          .card-text.text-center
+            %div{'data-toggle':'buttons'}
+              .btn.btn-radio.m-2
+                %input{type: 'radio', name: 'test'}
+                  .d-block RM
+                  .d-block 5
+              .btn.btn-radio.m-2
+                %input{type: 'radio', name: 'test'}
+                  .d-block RM
+                  .d-block 10
+              .btn.btn-radio.m-2
+                %input{type: 'radio', name: 'test'}
+                  .d-block RM
+                  .d-block 15
+              .btn.btn-radio.m-2
+                %input{type: 'radio', name: 'test'}
+                  .d-block RM
+                  .d-block 20
+              .btn.btn-radio.m-2
+                %input{type: 'radio', name: 'test'}
+                  .d-block RM
+                  .d-block 30
+              .btn.btn-radio.m-2
+                %input{type: 'radio', name: 'test'}
+                  .d-block RM
+                  .d-block 50
+              .btn.btn-radio.m-2.pt-0
+                .d-block.mb-1 Other Amount
+                %input.mw-7{type: 'text', name: 'test'}
   .row.mt-5
     .col-12
       .card
@@ -35,4 +56,5 @@
           .card-title Phone Number
           .card-text
             = f.input :phone_number
-        = f.submit
+          .text-center
+            .btn.btn-red= f.submit

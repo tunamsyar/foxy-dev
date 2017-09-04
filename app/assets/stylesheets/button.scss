@@ -1,0 +1,33 @@
+.btn-radio {
+  background-color: $blue;
+  color: $white;
+  border-color: $blue;
+  font-size: 1.75rem;
+  min-width: 70px;
+
+  &:active, &.active{
+    background-color: $dark-blue;
+    border-color: $white;
+  }
+
+  div:first-of-type {
+    font-size: .75rem;
+  }
+}
+
+.btn-red {
+  background-color: $red;
+  color: $white;
+  border-color: $red;
+  min-width: 15rem;
+  text-transform: uppercase;
+  border-radius: 0.65rem;
+  font-weight: 200;
+  font-size: 1.5rem;
+  input {
+    color: $white;
+    font-weight: 200;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+}

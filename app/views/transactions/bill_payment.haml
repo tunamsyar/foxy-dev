@@ -9,12 +9,36 @@
     .card
       .card-block
         .card-title Amount
-        .card-text
-          %input{type: 'radio', name: 'test'} 5
-          %input{type: 'radio', name: 'test'} 10
-          %input{type: 'radio', name: 'test'} 15
-          %input{type: 'radio', name: 'test'} 20
-          %input{type: 'radio', name: 'test'} 30
-          %input{type: 'radio', name: 'test'} 50
+        .card-text.text-center
+          %div{'data-toggle':'buttons'}
+            .btn.btn-radio.m-2
+              %input{type: 'radio', name: 'test'}
+                .d-block RM
+                .d-block 5
+            .btn.btn-radio.m-2
+              %input{type: 'radio', name: 'test'}
+                .d-block RM
+                .d-block 10
+            .btn.btn-radio.m-2
+              %input{type: 'radio', name: 'test'}
+                .d-block RM
+                .d-block 15
+            .btn.btn-radio.m-2
+              %input{type: 'radio', name: 'test'}
+                .d-block RM
+                .d-block 20
+            .btn.btn-radio.m-2
+              %input{type: 'radio', name: 'test'}
+                .d-block RM
+                .d-block 30
+            .btn.btn-radio.m-2
+              %input{type: 'radio', name: 'test'}
+                .d-block RM
+                .d-block 50
+            .btn.btn-radio.m-2.px-0
+              %input{type: 'radio', name: 'test'}
+                .d-block RM
+                .d-block 100
 .row.mt-5.justify-content-center
-  .btn Pay Bill
+  .btn.btn-red
+    Pay Bill

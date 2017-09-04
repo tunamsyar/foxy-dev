@@ -6,6 +6,10 @@
   height: 2.2rem;
 }
 
+.mw-7 {
+  max-width: 7rem;
+}
+
 @include media-breakpoint-down(xs) {
   .pr-xs-25 {
     padding-right: 26.5px;
