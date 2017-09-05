@@ -164,6 +164,7 @@ GEM
     parser (2.4.0.0)
       ast (~> 2.2)
     pg (0.20.0)
+    popper_js (1.12.3)
     powerpack (0.1.1)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -193,6 +194,7 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 5.0.3)
       sprockets-rails (>= 2.0.0)
+    rails-assets-tether (1.1.1)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -326,12 +328,14 @@ DEPENDENCIES
   listen
   mini_magick
   pg
+  popper_js (~> 1.12.3)
   pry
   pry-byebug
   pry-rails
   puma
   pundit
   rails (~> 5.0.0)
+  rails-assets-tether (>= 1.1.0)
   rails_best_practices
   reek
   rspec-rails

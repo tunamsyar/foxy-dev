@@ -1,42 +1,81 @@
 /* The side navigation menu */
 .sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0;
-    left: 0;
-    overflow-x: hidden; /* Disable horizontal scroll */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
 /* The navigation menu links */
 .sidenav a {
-    text-decoration: none;
-    display: block;
-    transition: 0.3s
+  text-decoration: none;
+  display: block;
+  transition: 0.3s
 }
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover, .offcanvas a:focus{
-    color: #f1f1f1;
+  color: #f1f1f1;
 }
 
 /* Position and style the close button (top right corner) */
 .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    margin-left: 50px;
+  position: absolute;
+  top: 0;
+  right: 25px;
+  margin-left: 50px;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
-    transition: margin-left .5s;
+  transition: margin-left .5s;
+}
+
+.toggle-sidebar {
+  margin-left: 25%;
+
+  #mySidenav {
+    width: 25%;
+  }
+}
+
+.text-menu {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  a:first-child {
+    font-size: 1.75rem;
+    line-height: 1.1;
+  }
+}
+
+.mini-menu {
+  display: none;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+@include media-breakpoint-down(sm)  {
+  .toggle-sidebar {
+    margin-left: 15%;
+
+    #mySidenav {
+      width: 15%;
+    }
+  }
+
+  .mini-menu {
+    display: block;
+    font-size: 5px;
+    margin-top: -1rem;
+    margin-left: -10px;
+    margin-right: -20px;
+  }
 }
