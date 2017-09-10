@@ -9,7 +9,6 @@ class InternationalTopUpsController < ApplicationController
   end
 
   def create
-    binding.pry
     @inter_top_up = current_user.international_top_ups.build(tran_params)
     if @inter_top_up.save
       InternationalTopUpServices.new(@inter_top_up).deduct_wallet
