@@ -3,7 +3,7 @@ require 'httparty'
 class InternationalTopUpServices
   include HTTParty
   format :xml
-  base_uri 'testapi.mobilepulsa.com'
+  base_uri 'http://testapi.mobilepulsa.com'
 
   def initialize(transaction)
     @trx = transaction
@@ -19,6 +19,7 @@ class InternationalTopUpServices
   def deduct_wallet
     @total = @wallet.balance.to_i - @transaction.amount.to_i
     @wallet.update_attributes(balance: @total)
+    top_up
     # check_status
   end
 
@@ -28,12 +29,27 @@ class InternationalTopUpServices
   end
   
   def respond_to_mobipulsa
-    self.class.post('/receiver', :body => @body)
+    @response = self.class.post('/receiver', :body => @body)
+    #if response on
   end
 
   private
   
-  # def encrypt
-  #   Digest::MD5.hexdigest(username+password+id)
-  # end
+  def top_up
+    @top_up=  {
+                :commands => "topup",
+                :username => "neraca",
+                :ref_id => @trx.ref_id,
+                :hp => @trx.phone_number,
+                :pulsa_code => @trx.operator.operator_rate.code,
+                :sign => @encrypt
+              }
+    @body = @test.to_xml(:root => 'mp', :skip_instruct => true)
+    respond_to_mobipulsa
+  end
+  
+  def encrypt
+    @encrypt = Digest::MD5.hexdigest("neraca"+"password"+@trx.ref_id)
+  end
+  
 end
