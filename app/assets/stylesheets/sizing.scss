@@ -10,6 +10,14 @@
   max-width: 7rem;
 }
 
+.max-50 {
+  max-height: 50px;
+}
+
+.max-30 {
+  max-height: 30px;
+}
+
 @include media-breakpoint-down(xs) {
   .pr-xs-25 {
     padding-right: 26.5px;
