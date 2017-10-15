@@ -14,10 +14,10 @@
         = f.input :password
         = f.input :password_confirmation
         = f.input :current_password, autocomplete: "off"
-        = f.submit "Update"
+        = f.submit "Update", class: 'btn btn-red'
 
       %h5 Cancel la der
       %p
         Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-      = link_to "Back", :back
+      = link_to "Back", :back, class: 'btn btn-red'
     .col-2
