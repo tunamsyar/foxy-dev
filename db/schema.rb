@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170815143253) do
+ActiveRecord::Schema.define(version: 20171009111106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20170815143253) do
   create_table "international_top_ups", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "status",                                default: 0
-    t.integer  "integer",                               default: 0
+    t.integer  "ref_id",                                default: 0
     t.string   "phone_number"
     t.integer  "operator_id"
     t.datetime "created_at",                                        null: false
@@ -67,6 +67,8 @@ ActiveRecord::Schema.define(version: 20170815143253) do
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.integer  "transaction_type"
+    t.date     "transaction_date"
+    t.datetime "transaction_time"
   end
 
   create_table "transactions", force: :cascade do |t|

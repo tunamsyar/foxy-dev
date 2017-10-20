@@ -1,3 +1,9 @@
-.container
-  - flash.each do |key, value|
-    %div{:class => "alert alert-#{key}"}= value
+#flash-messages-container
+  - flash.each do |k,v|
+    %section.flash-messages
+      %div{:class => "alert alert-#{k}"}
+        %button#close.close{"data-dismiss" => "alert", :type => "button"}
+          ×
+        .message
+          = v
+
