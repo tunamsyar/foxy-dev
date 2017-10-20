@@ -1,3 +1,18 @@
+@mixin btn-telco($logo) {
+  background-image: url($logo);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 2.5rem;
+  &:active, &.active{
+    background-image: url($logo);
+    box-shadow: 0 0 0 3px rgba(18, 99, 156, .5);
+  }
+  &:focus, &.focus {
+    box-shadow: 0 0 0 3px rgba(18, 99, 156, 1);
+  }
+}
+
 .btn-radio {
   background-color: $blue;
   color: $white;
@@ -15,6 +30,18 @@
   }
 }
 
+.nofocus{
+  &:active, &.active {
+    background-color: $blue;
+    border-color: $blue;
+  }
+  &:focus, &.focus {
+    outline: 0;
+    box-shadow: none;
+    }
+}
+
+
 .btn-red {
   background-color: $red;
   color: $white;
@@ -30,4 +57,28 @@
     font-size: 1.5rem;
     text-transform: uppercase;
   }
+}
+
+.btn-hotlink {
+  @include btn-telco('telcologo/hotlink.png')
+}
+
+.btn-digi {
+  @include btn-telco('telcologo/digi.png')
+}
+
+.btn-xpax {
+  @include btn-telco('telcologo/xpax.png')
+}
+
+.btn-umobile {
+  @include btn-telco('telcologo/umobile.png')
+}
+
+.btn-onexox {
+  @include btn-telco('telcologo/onexox.png')
+}
+
+.btn-tunetalk {
+  @include btn-telco('telcologo/tunetalk.png')
 }

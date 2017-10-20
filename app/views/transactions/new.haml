@@ -5,15 +5,27 @@
       .card
         .card-block
           .card-title Operator
-          .card-text
-            = f.collection_radio_buttons :operator_id, @operators.local.map {|a| [a.id, a.operator_name ]}, :first, :last
+          .card-text.text-center
+            / = f.collection_radio_buttons :operator_id, @operators.local.map {|a| [a.id, a.operator_name ]}, :first, :last
+            %div{'data-toggle':'buttons'}
+              .btn.btn-hotlink.m-2
+                %input{type: 'radio', name: 'test'}
+              .btn.btn-digi.m-2
+                %input{type: 'radio', name: 'test'}
+              .btn.btn-umobile.m-2
+                %input{type: 'radio', name: 'test'}
+              .btn.btn-tunetalk.m-2
+                %input{type: 'radio', name: 'test'}
+              .btn.btn-onexox.m-2
+                %input{type: 'radio', name: 'test'}
+              .btn.btn-xpax.m-2
+                %input{type: 'radio', name: 'test'}
   .row.mt-5
     .col-12
       .card
         .card-block
           .card-title Amount
           .card-text.text-center
-            / = f.input :amount
             %div{'data-toggle':'buttons'}
               .btn.btn-radio.m-2
                 %input{type: 'radio', name: 'test'}
@@ -42,7 +54,7 @@
               .btn.btn-radio.m-2.pt-0
                 .d-block.mb-1 Other Amount
                 %input.mw-7{type: 'text', name: 'test'}
-                = f.input :amount
+                / = f.input :amount
   .row.mt-5
     .col-12
       .card
