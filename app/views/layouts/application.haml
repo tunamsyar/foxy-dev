@@ -52,9 +52,9 @@
               .col
                 .row.mb-3
                   .col-12.col-sm-8.text-left
-                    .h1.text-red.font-weight-200= content_for :page_title
+                    .h1.text-main.font-weight-200= content_for :page_title
                   .col.text-right
-                    = icon('usd', class: 'text-red fa-2x')
+                    = icon('usd', class: 'text-main fa-2x')
                     .btn.bg-red
                       .text-white.rounded-0
                         = current_user.wallet.balance if current_user.present? && current_user.wallet.balance?
