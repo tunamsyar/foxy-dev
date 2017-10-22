@@ -10,12 +10,12 @@ class TransactionServices
   end
 
   def top_up_link(operator,transaction)
-    "http://121.122.114.245:5151/#{operator}?web_id=#{transaction.id}"\
+    "#{ENVied.TOPUP_SERVER}/#{operator}?web_id=#{transaction.id}"\
     "&phone=#{transaction.phone_number}&amount=#{transaction.amount.to_i}"
   end
 
   def status_link(transaction)
-    "http://121.122.114.245:5151/status/#{transaction.id}"
+    "#{ENVied.TOPUP_SERVER}/status/#{transaction.id}"
   end
 
   def deduct_wallet
