@@ -7,7 +7,8 @@
           Today's Outlook
         .card-text
           .row.justify-content-center.my-3
-            .btn.bg-purple.text-white.rounded-0 RM 110.00
+            .btn.bg-purple.text-white.rounded-0
+              = current_user.total_today if current_user.present?
           .row.justify-content-center.my-3
             .btn.bg-green.text-white.rounded-0 RM 110.00
           .row.justify-content-center.my-3
