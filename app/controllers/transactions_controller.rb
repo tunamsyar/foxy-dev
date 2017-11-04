@@ -1,6 +1,7 @@
 class TransactionsController < ApplicationController
   before_action :active_users_only
   before_action :assign_operators
+  before_action :check_wallet, only: [:create]
 
   def index; end
 
@@ -18,6 +19,12 @@ class TransactionsController < ApplicationController
     end
   end
 
+  def check_wallet
+    return if balance > 10
+    redirect_to new_transaction_path
+    flash[:error] = 'Not Enough balance'
+  end
+
   private
 
   def tran_params
@@ -27,5 +34,9 @@ class TransactionsController < ApplicationController
 
   def assign_operators
     @operators = Operator.all
+  end
+
+  def balance
+    current_user.wallet.balance.to_i
   end
 end
