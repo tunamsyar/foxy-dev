@@ -8,11 +8,16 @@
         .card-text
           .row.justify-content-center.my-3
             .btn.bg-purple.text-white.rounded-0
+              = current_user.total_top_up_today if current_user.present?
+          .row.justify-content-center.my-3
+            .btn.bg-green.text-white.rounded-0
+              = current_user.total_pin_today if current_user.present?
+          .row.justify-content-center.my-3
+            .btn.bg-red.text-white.rounded-0
+              = current_user.total_international_today if current_user.present?
+          .row.justify-content-center.my-3
+            .btn.bg-red.text-white.rounded-0
               = current_user.total_today if current_user.present?
-          .row.justify-content-center.my-3
-            .btn.bg-green.text-white.rounded-0 RM 110.00
-          .row.justify-content-center.my-3
-            .btn.bg-red.text-white.rounded-0 RM 110.00
   .col-12.col-md-8
     .card.my-sm-0.mt-3
       .card-block
