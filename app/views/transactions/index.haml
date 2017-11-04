@@ -1,113 +1,120 @@
 - provide :page_title, 'Transaction History'
 .row
   .col-12
-    %table.table.table-responsive.card
-      %tr.card-block
-        %td.align-middle Date-Time
-        %td.align-middle Operator
-        %td.align-middle Amount
-        %td.align-middle Phone Number/PIN
-        %td.align-middle Status
-        %td.align-middle Status Reply
-        %td.align-middle Commission
-      / -current_user.transactions.each do |transaction|
-      /   %tr
-      /     %td.align-middle
-      /       = transaction.created_at
-      /     %td.align-middle
-      /       = @operators.find(transaction.operator_id).operator_name
-      /     %td.align-middle
-      /       = transaction.amount
-      /     %td.align-middle
-      /       = transaction.phone_number
-      /     %td.align-middle
-      /       = transaction.status
-      /     %td.align-middle
-      /       = transaction.status_reply
-      /     %td.align-middle
-      /       = transaction.commission
-      %tr.text-center
-        %td.align-middle
-          test
-        %td.align-middle
-          = image_tag 'telcologo/hotlink.png', class: 'img-fluid max-30'
-        %td.align-middle
-          .btn.btn-radio.nofocus.px-0
-            .d-block RM
-            .d-block 5
-        %td.align-middle
-          test
-        %td.align-middle
-          test
-        %td.align-middle
-          test
-        %td.align-middle
-          test
-      %tr.text-center
-        %td.align-middle
-          test
-        %td.align-middle
-          = image_tag 'telcologo/umobile.png', class: 'img-fluid max-30'
-        %td.align-middle
-          .btn.btn-radio.nofocus.px-0
-            .d-block RM
-            .d-block 30
-        %td.align-middle
-          test
-        %td.align-middle
-          test
-        %td.align-middle
-          test
-        %td.align-middle
-          test
-      %tr.text-center
-        %td.align-middle
-          test
-        %td.align-middle
-          = image_tag 'telcologo/digi.png', class: 'img-fluid max-30'
-        %td.align-middle
-          .btn.btn-radio.nofocus.px-0
-            .d-block RM
-            .d-block 10
-        %td.align-middle
-          test
-        %td.align-middle
-          test
-        %td.align-middle
-          test
-        %td.align-middle
-          test
-      %tr.text-center
-        %td.align-middle
-          test
-        %td.align-middle
-          = image_tag 'telcologo/tunetalk.png', class: 'img-fluid max-30'
-        %td.align-middle
-          .btn.btn-radio.nofocus.px-0
-            .d-block RM
-            .d-block 100
-        %td.align-middle
-          test
-        %td.align-middle
-          test
-        %td.align-middle
-          test
-        %td.align-middle
-          test
-      %tr.text-center
-        %td.align-middle
-          test
-        %td.align-middle
-          = image_tag 'telcologo/onexox.png', class: 'img-fluid max-30'
-        %td.align-middle
-          .btn.btn-radio.nofocus.px-0
-            .d-block RM
-            .d-block 20
-        %td.align-middle
-          test
-        %td.align-middle
-          test
-        %td.align-middle
-          test
-        %td.align-middle
-          test
+    = render 'local_top_up' if current_user.transactions.exists?
+.row
+  .col-12
+    = render 'international_top_up' if current_user.international_top_ups.exists?
+.row
+  .col-12
+    = render 'pins' if current_user.operator_pins.exists?
+    -# %table.table.table-responsive.card
+    -#   %tr.card-block
+    -#     %td.align-middle Date-Time
+    -#     %td.align-middle Operator
+    -#     %td.align-middle Amount
+    -#     %td.align-middle Phone Number/PIN
+    -#     %td.align-middle Status
+    -#     %td.align-middle Status Reply
+    -#     %td.align-middle Commission
+      -# -current_user.transactions.each do |transaction|
+      -#   %tr.text-center
+      -#     %td.align-middle
+      -#       = transaction.created_at.to_date
+      -#     %td.align-middle
+      -#       = @operators.find(transaction.operator_id).operator_name
+      -#     %td.align-middle
+      -#       = transaction.amount
+      -#     %td.align-middle
+      -#       = transaction.phone_number
+      -#     %td.align-middle
+      -#       = transaction.status
+      -#     %td.align-middle
+      -#       = transaction.status_reply
+      -#     %td.align-middle
+      -#       = transaction.commission
+      -# %tr.text-center
+      -#   %td.align-middle
+      -#     test
+      -#   %td.align-middle
+      -#     = image_tag 'telcologo/hotlink.png', class: 'img-fluid max-30'
+      -#   %td.align-middle
+      -#     .btn.btn-radio.nofocus.px-0
+      -#       .d-block RM
+      -#       .d-block 5
+      -#   %td.align-middle
+      -#     test
+      -#   %td.align-middle
+      -#     test
+      -#   %td.align-middle
+      -#     test
+      -#   %td.align-middle
+      -#     test
+      -# %tr.text-center
+      -#   %td.align-middle
+      -#     test
+      -#   %td.align-middle
+      -#     = image_tag 'telcologo/umobile.png', class: 'img-fluid max-30'
+      -#   %td.align-middle
+      -#     .btn.btn-radio.nofocus.px-0
+      -#       .d-block RM
+      -#       .d-block 30
+      -#   %td.align-middle
+      -#     test
+      -#   %td.align-middle
+      -#     test
+      -#   %td.align-middle
+      -#     test
+      -#   %td.align-middle
+      -#     test
+      -# %tr.text-center
+      -#   %td.align-middle
+      -#     test
+      -#   %td.align-middle
+      -#     = image_tag 'telcologo/digi.png', class: 'img-fluid max-30'
+      -#   %td.align-middle
+      -#     .btn.btn-radio.nofocus.px-0
+      -#       .d-block RM
+      -#       .d-block 10
+      -#   %td.align-middle
+      -#     test
+      -#   %td.align-middle
+      -#     test
+      -#   %td.align-middle
+      -#     test
+      -#   %td.align-middle
+      -#     test
+      -# %tr.text-center
+      -#   %td.align-middle
+      -#     test
+      -#   %td.align-middle
+      -#     = image_tag 'telcologo/tunetalk.png', class: 'img-fluid max-30'
+      -#   %td.align-middle
+      -#     .btn.btn-radio.nofocus.px-0
+      -#       .d-block RM
+      -#       .d-block 100
+      -#   %td.align-middle
+      -#     test
+      -#   %td.align-middle
+      -#     test
+      -#   %td.align-middle
+      -#     test
+      -#   %td.align-middle
+      -#     test
+      -# %tr.text-center
+      -#   %td.align-middle
+      -#     test
+      -#   %td.align-middle
+      -#     = image_tag 'telcologo/onexox.png', class: 'img-fluid max-30'
+      -#   %td.align-middle
+      -#     .btn.btn-radio.nofocus.px-0
+      -#       .d-block RM
+      -#       .d-block 20
+      -#   %td.align-middle
+      -#     test
+      -#   %td.align-middle
+      -#     test
+      -#   %td.align-middle
+      -#     test
+      -#   %td.align-middle
+      -#     test
