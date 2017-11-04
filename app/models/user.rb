@@ -3,6 +3,11 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  validates :phone_number,
+            presence: true,
+            length: { maximum: 10 }
+
   has_many :transactions
   has_many :international_top_ups
   has_many :reloads
