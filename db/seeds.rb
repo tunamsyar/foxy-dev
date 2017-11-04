@@ -27,7 +27,7 @@ maxis_amount =
 
 maxis_amount.each do |amount|
   Operator.find_by(operator_name: "Maxis")
-          .operator_stores.create(amount: maxis_amount)
+          .operator_stores.create(amount: amount)
 end
 
 digi_amount = 
@@ -38,7 +38,7 @@ digi_amount =
 
 digi_amount.each do |amount|
   Operator.find_by(operator_name: "Digi")
-          .operator_stores.create(amount: digi_amount)
+          .operator_stores.create(amount: amount)
 end
 
 celcom_amount =
@@ -49,12 +49,12 @@ celcom_amount =
 
 celcom_amount.each do |amount|
   Operator.find_by(operator_name: "Celcom")
-          .operator_stores.create(amount: celcom_amount)
+          .operator_stores.create(amount: amount)
 end
 
 celcom_amount.each do |amount|
   Operator.find_by(operator_name: "uMobile")
-          .operator_stores.create(amount: celcom_amount)
+          .operator_stores.create(amount: amount)
 end
 
 tune_amount = 
@@ -62,7 +62,7 @@ tune_amount =
 
 tune_amount.each do |amount|
   Operator.find_by(operator_name: "Tune")
-          .operator_stores.create(amount: tune_amount)
+          .operator_stores.create(amount: amount)
 end
 
 xox_amount =
@@ -70,5 +70,5 @@ xox_amount =
 
 xox_amount.each do |amount|
   Operator.find_by(operator_name: "XoX")
-          .operator_stores.create(amount: xox_amount)
+          .operator_stores.create(amount: amount)
 end
