@@ -14,10 +14,27 @@ class User < ApplicationRecord
     WalletServices.new(self).init_wallet
   end
 
-  def total_today
+  def total_top_up_today
     transactions.where(
       'created_at BETWEEN ? AND ?',
       DateTime.now.beginning_of_day,
-      DateTime.now.end_of_day).map(&:amount).sum.to_s
+      DateTime.now.end_of_day).map(&:amount).sum
+  end
+
+  def total_pin_today
+    operator_pins.where(
+      'created_at BETWEEN ? AND ?',
+      DateTime.now.beginning_of_day,
+      DateTime.now.end_of_day).map(&:amount).sum
+  end
+
+  def total_international_today
+    international_top_ups.where('created_at BETWEEN ? AND ?',
+      DateTime.now.beginning_of_day,
+      DateTime.now.end_of_day).map(&:amount).sum
+  end
+
+  def total_today
+    total_top_up_today + total_pin_today + total_international_today
   end
 end
