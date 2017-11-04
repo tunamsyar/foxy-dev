@@ -53,3 +53,5 @@ gem 'simple_form'
 gem 'devise'
 gem 'pundit'
 gem 'sidekiq'
+
+gem 'rails_admin', '~> 1.2'
