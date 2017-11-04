@@ -19,13 +19,13 @@ class TransactionsController < ApplicationController
     end
   end
 
+  private
+
   def check_wallet
     return if balance > 10
     redirect_to new_transaction_path
     flash[:error] = 'Not Enough balance'
   end
-
-  private
 
   def tran_params
     params.require(:transaction)

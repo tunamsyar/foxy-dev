@@ -1,0 +1,28 @@
+%table.table.table-responsive.card
+  %tr.card-block
+    %td.align-middle Date-Time
+    %td.align-middle Operator
+    %td.align-middle Amount
+    %td.align-middle Phone Number/PIN
+    %td.align-middle Status
+    %td.align-middle Status Reply
+    %td.align-middle Commission
+  -current_user.transactions.each do |transaction|
+    %tr.text-center
+      %td.align-middle
+        = transaction.created_at.to_date
+      %td.align-middle
+        = @operators.find(transaction.operator_id).operator_name
+      %td.align-middle
+        .btn.btn-radio.nofocus.px-0
+          .d-block RM
+          .d-block
+            = transaction.amount
+      %td.align-middle
+        = transaction.phone_number
+      %td.align-middle
+        = transaction.status
+      %td.align-middle
+        = transaction.status_reply
+      %td.align-middle
+        = transaction.commission
