@@ -59,13 +59,13 @@
               .btn.btn-radio.m-2.pt-0
                 .d-block.mb-1 Other Amount
                 %input.mw-7{type: 'text', name: 'test'}
-                / = f.input :amount
   .row.mt-5
     .col-12
       .card
         .card-block
           .card-title Phone Number
           .card-text
+            = f.input :amount
             = f.input :phone_number
           .text-center
             = f.submit class:'btn btn-red'

@@ -13,4 +13,11 @@ class User < ApplicationRecord
   def create_wallet
     WalletServices.new(self).init_wallet
   end
+
+  def total_today
+    transactions.where(
+      'created_at BETWEEN ? AND ?',
+      DateTime.now.beginning_of_day,
+      DateTime.now.end_of_day).map(&:amount).sum.to_s
+  end
 end
