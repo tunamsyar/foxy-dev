@@ -15,6 +15,14 @@ class User < ApplicationRecord
   has_one :wallet
   after_create :create_wallet
 
+  rails_admin do
+    field :id
+    field :name
+    field :email
+    field :phone_number
+    field :created_at
+  end
+
   def create_wallet
     WalletServices.new(self).init_wallet
   end
